@@ -191,6 +191,7 @@ function (_React$Component) {
       var seconds = date.getSeconds();
       var minutes = date.getMinutes();
       var hours = date.getHours();
+      if (hours > 12) hours -= 12;
       var hrStr = hours < 10 ? "0".concat(hours) : "".concat(hours);
       var minStr = minutes < 10 ? "0".concat(minutes) : "".concat(minutes);
       var secStr = seconds < 10 ? "0".concat(seconds) : "".concat(seconds);

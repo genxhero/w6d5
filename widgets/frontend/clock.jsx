@@ -62,6 +62,7 @@ parseDate() {
     let seconds = date.getSeconds();
     let minutes = date.getMinutes();
     let hours = date.getHours();
+     if(hours > 12) hours -=12;
     let hrStr = hours < 10 ? `0${hours}` : `${hours}`;
     let minStr = minutes < 10 ? `0${minutes}` : `${minutes}`;
     let secStr = seconds < 10 ? `0${seconds}` : `${seconds}`;
