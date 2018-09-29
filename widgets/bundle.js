@@ -86,6 +86,139 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/clock.jsx":
+/*!****************************!*\
+  !*** ./frontend/clock.jsx ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+
+
+
+var Clock =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Clock, _React$Component);
+
+  function Clock(props) {
+    var _this;
+
+    _classCallCheck(this, Clock);
+
+    // debugger;
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Clock).call(this, props));
+    _this.state = {
+      time: new Date()
+    };
+    _this.tick = _this.tick.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  _createClass(Clock, [{
+    key: "render",
+    value: function render() {
+      // debugger;
+      var currentTime = this.parseTime();
+      var currentDate = this.parseDate(); //Fri Sep 28 2018
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        class: "clock"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        class: "clock-time"
+      }, "I think the time is: ", currentTime, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        class: "clock-date"
+      }, "Today's date is: ", currentDate));
+    }
+  }, {
+    key: "parseDate",
+    value: function parseDate() {
+      var dayNames = new Array(7);
+      dayNames[0] = "Sunday";
+      dayNames[1] = "Monday";
+      dayNames[2] = "Tuesday";
+      dayNames[3] = "Wednesday";
+      dayNames[4] = "Thursday";
+      dayNames[5] = "Friday";
+      dayNames[6] = "Saturday";
+      var monthNames = new Array(12);
+      monthNames[0] = "January";
+      monthNames[1] = "February";
+      monthNames[2] = "March";
+      monthNames[3] = "April";
+      monthNames[4] = "May";
+      monthNames[5] = "June";
+      monthNames[6] = "July";
+      monthNames[7] = "August";
+      monthNames[8] = "September";
+      monthNames[9] = "October";
+      monthNames[10] = "November";
+      monthNames[11] = "December";
+      var dayName = dayNames[this.state.time.getDay()];
+      var dayNum = this.state.time.getDate();
+      var monthName = this.state.time.getMonth();
+      var year = this.state.time.getMonth();
+      return "".concat(dayName, " ").concat(monthName, " ").concat(dayNum, " ").concat(year);
+    }
+  }, {
+    key: "parseTime",
+    value: function parseTime() {
+      var date = this.state.time;
+      var seconds = date.getSeconds();
+      var minutes = date.getMinutes();
+      var hours = date.getHours();
+      var hrStr = hours < 10 ? "0".concat(hours) : "".concat(hours);
+      var minStr = minutes < 10 ? "0".concat(minutes) : "".concat(minutes);
+      var secStr = seconds < 10 ? "0".concat(seconds) : "".concat(seconds);
+      return "".concat(hrStr, ":").concat(minStr, ":").concat(secStr);
+    }
+  }, {
+    key: "tick",
+    value: function tick() {
+      //  debugger;
+      this.setState({
+        time: new Date()
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      //  debugger;
+      setInterval(this.tick, 1000);
+    }
+  }]);
+
+  return Clock;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Clock);
+
+/***/ }),
+
 /***/ "./frontend/widgets.jsx":
 /*!******************************!*\
   !*** ./frontend/widgets.jsx ***!
@@ -99,13 +232,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _clock__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./clock */ "./frontend/clock.jsx");
 
 
-document.addEventListener("DOMContentLoaded", function (e) {
+
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("page loading");
   var root = document.getElementById('root');
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "div1"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "React is working")), root);
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_clock__WEBPACK_IMPORTED_MODULE_2__["default"], null), root);
 });
 
 /***/ }),

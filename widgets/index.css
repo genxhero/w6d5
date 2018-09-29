@@ -1,0 +1,39 @@
+
+h1 {
+  /* box-shadow: 1px 1px gray; */
+}
+
+.clock {
+  font-family: 'Gloria Hallelujah', cursive;
+  border: 1px black solid;
+  height: 1000px;
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  /* position: absolute; */
+  background-image: url("http://www.musee-rodin.fr/sites/musee/files/styles/zoom/public/oeuvres/visuels/jdc_b458.jpg?itok=TdHYRUpZ");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+.clock-date {
+  margin-left: 220px;
+  text-shadow: 1px 1px gray;
+  background: white;
+  width: 500px;
+  text-align: center;
+  box-shadow: 2px 4px;
+}
+
+.clock-time {
+  box-shadow: 2px 4px;
+  margin-left: 250px;
+  background: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 500px;
+  text-align: center;
+}
